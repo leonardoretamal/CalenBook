@@ -41,7 +41,7 @@ Para más detalles técnicos, guías de usuario o procesos de despliegue, consul
 
 - [Guía de Desarrollador](docs/GUIA_DESARROLLADOR.md)
 - [Guía de Usuario](docs/GUIA_USUARIO.md)
-- [Guía de Despliegue](docs/GUIA_DESPLIEGUE_VERCEL.md)
+- [Guía de Despliegue](docs/GUIA_DESPLIEGUE_VERCEL_GOOGLE.md)
 
 ---
 
