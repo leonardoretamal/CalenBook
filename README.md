@@ -35,13 +35,23 @@
 
 ---
 
+### 📚 Documentación Detallada
+
+Para más detalles técnicos, guías de usuario o procesos de despliegue, consulta la carpeta [**docs/**](docs/):
+
+- [Guía de Desarrollador](docs/GUIA_DESARROLLADOR.md)
+- [Guía de Usuario](docs/GUIA_USUARIO.md)
+- [Guía de Despliegue](docs/GUIA_DESPLIEGUE_VERCEL.md)
+
+---
+
 <a name="english"></a>
 
-<h2>🇺🇸 English</h2>
+## 🇺🇸 English
 
 **CalenBook** is a professional booking management platform designed to streamline appointment scheduling between service providers and their clients. Built with a focus on speed, security, and user experience.
 
-<h3>✨ Key Features</h3>
+### ✨ Key Features
 
 - **Control Dashboard**: Real-time statistics for confirmed and pending bookings, and recent activity.
 - **Flexible Schedule Management**: Configure multiple schedules, slot durations, and time buffers.
@@ -49,7 +59,7 @@
 - **Google Calendar Sync**: Native OAuth connection to automatically sync appointments.
 - **Email Validation**: Integrated confirmation flow via **Nodemailer/SMTP** to prevent spam.
 
-<h3>🛠️ Tech Stack</h3>
+### 🛠️ Tech Stack
 
 - **Core**: Next.js 16.1.6 (App Router)
 - **Database & Auth**: Supabase (PostgreSQL + RLS)
@@ -57,7 +67,7 @@
 - **Styling**: Tailwind CSS + Shadcn/UI
 - **Validation & State**: Zod + Zustand
 
-<h3>🚀 Quick Start</h3>
+### 🚀 Quick Start
 
 1. **Install dependencies**: `npm install`
 2. **Configure environment**: Rename `.env.example` to `.env` in `apps/web/` and fill in the keys (see [GUIA_DESARROLLADOR.md](docs/GUIA_DESARROLLADOR.md)).

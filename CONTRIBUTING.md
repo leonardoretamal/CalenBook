@@ -10,15 +10,16 @@ Thank you for your interest in contributing! 🎉
    git clone https://github.com/YOUR_USERNAME/calenbook.git
    cd calenbook
    ```
-3. **Install** dependencies:
+3. **Install** dependencies (from root):
    ```bash
    npm install
    ```
 4. **Copy** environment variables:
    ```bash
-   cp .env.example .env.local
+   # In apps/web/
+   cp .env.example .env
    ```
-5. **Configure** Supabase (see [Setup Guide](docs/setup-local.md))
+5. **Configure** Supabase (see [Technical Guide](docs/architecture.md))
 6. **Start** development:
    ```bash
    npm run dev
@@ -63,7 +64,7 @@ Thank you for your interest in contributing! 🎉
 apps/web        → Next.js frontend
 apps/supabase   → Database migrations and Edge Functions
 packages/shared → Shared types, schemas, and utilities
-docs/           → Documentation
+docs/           → Detailed Documentation & Guides
 ```
 
 ## Code Style
@@ -77,4 +78,4 @@ docs/           → Documentation
 
 ## Need Help?
 
-Open an issue describing what you want to work on before starting major changes.
+Check the [README.md](README.md) for overview or open an issue describing what you want to work on.
