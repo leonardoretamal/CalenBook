@@ -212,11 +212,16 @@ export function LoginForm() {
             className="w-full cursor-pointer"
             disabled={isPending}
             size="lg"
+            onClick={() => {
+              if (!isRegistering) {
+                toast.info('Iniciando sesión... Por favor espera.');
+              }
+            }}
           >
             {isPending ? (
               <>
                 <Spinner className="mr-2" />
-                {isRegistering ? 'Creando cuenta...' : 'Iniciando sesión...'}
+                {isRegistering ? 'Creando cuenta...' : 'Autenticando...'}
               </>
             ) : isRegistering ? (
               'Crear mi cuenta'

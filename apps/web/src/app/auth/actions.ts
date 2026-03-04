@@ -33,7 +33,7 @@ export async function signup(
 
   const supabase = await createClient();
 
-  const origin = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+  const origin = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
 
   const { data, error } = await supabase.auth.signUp({
     email,

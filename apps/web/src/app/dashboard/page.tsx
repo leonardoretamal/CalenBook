@@ -157,7 +157,7 @@ export default async function DashboardPage() {
             Tu Enlace Público de Reservas
           </div>
           <CopyUrlButton
-            url={`${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/u/${user?.user_metadata?.full_name?.toLowerCase().replace(/\s+/g, '-') || user?.id}`}
+            url={`${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/u/${user?.user_metadata?.full_name?.toLowerCase().replace(/\s+/g, '-') || user?.id}`}
           />
         </div>
       </div>
