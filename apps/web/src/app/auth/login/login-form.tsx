@@ -18,6 +18,7 @@ import { AlertCircle } from 'lucide-react';
 import { toast } from 'sonner';
 import { PasswordInput } from '@/components/ui/password-input';
 import { useRouter, useSearchParams } from 'next/navigation';
+import Link from 'next/link';
 
 const initialLoginState: { error: string | null; success: boolean } = {
   error: null,
@@ -195,6 +196,31 @@ export function LoginForm() {
               )}
             </div>
           </div>
+
+          {isRegistering && (
+            <div className="flex items-start space-x-2 py-2">
+              <input
+                type="checkbox"
+                id="privacy"
+                required
+                className="mt-1 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary cursor-pointer"
+              />
+              <label
+                htmlFor="privacy"
+                className="text-sm text-muted-foreground leading-tight"
+              >
+                Acepto los{' '}
+                <Link
+                  href="/privacidad"
+                  className="text-primary hover:underline font-medium"
+                  target="_blank"
+                >
+                  Términos y Condiciones de Privacidad
+                </Link>
+                .
+              </label>
+            </div>
+          )}
 
           {activeError && (
             <div className="bg-destructive/15 text-destructive text-sm p-3 rounded-md flex items-center gap-2">

@@ -5,16 +5,12 @@ import {
   CardHeader,
   CardTitle,
   CardDescription,
-  CardFooter,
 } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Label } from '@/components/ui/label';
-import { Bell, Shield } from 'lucide-react';
-
-import { PasswordInput } from '@/components/ui/password-input';
 import { ProfileForm } from './components/profile-form';
 import { GoogleCalendarCard } from './components/google-calendar-card';
 import { PasswordUpdateForm } from './components/password-update-form';
+import { PrivacySettings } from './components/privacy-settings';
+import { Bell } from 'lucide-react';
 
 export default async function SettingsPage() {
   const supabase = await createClient();
@@ -79,15 +75,8 @@ export default async function SettingsPage() {
               </CardDescription>
             </CardHeader>
           </Card>
-          <Card className="opacity-60 cursor-not-allowed">
-            <CardHeader className="pb-3">
-              <Shield className="h-5 w-5 text-primary mb-2" />
-              <CardTitle className="text-lg">Privacidad</CardTitle>
-              <CardDescription>
-                Configuración avanzada de privacidad.
-              </CardDescription>
-            </CardHeader>
-          </Card>
+
+          <PrivacySettings />
         </div>
       </div>
     </div>

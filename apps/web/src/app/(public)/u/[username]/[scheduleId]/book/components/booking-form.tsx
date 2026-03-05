@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -158,7 +159,33 @@ export function BookingForm({
             />
           </div>
         </CardContent>
-        <CardFooter>
+        <CardFooter className="flex flex-col gap-4">
+          <div className="flex items-start space-x-2 py-2">
+            <input
+              type="checkbox"
+              id="privacy"
+              required
+              className="mt-1 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary cursor-pointer"
+            />
+            <label
+              htmlFor="privacy"
+              className="text-sm text-muted-foreground leading-tight"
+            >
+              Acepto que mis datos sean tratados según la{' '}
+              <Link
+                href="/privacidad"
+                className="text-primary hover:underline font-medium"
+                target="_blank"
+              >
+                <p className="mt-2 font-mono font-bold text-foreground bg-muted p-2 rounded text-center select-none">
+                  ELIMINAR MI CUENTA
+                </p>
+                Política de Privacidad
+              </Link>
+              .
+            </label>
+          </div>
+
           <Button
             type="submit"
             className="w-full cursor-pointer"

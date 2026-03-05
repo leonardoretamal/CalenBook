@@ -157,3 +157,45 @@ export async function updatePassword({
 
   return { success: true };
 }
+export async function deleteAccountAction() {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) {
+    return { success: false, error: 'No autenticado' };
+  }
+
+  // Usar admin client para borrar el usuario de auth.users
+  // El CASCADE se encargará de borrar los registros en owners, schedules y bookings
+  const { createClient: createSupabaseClient } =
+    await import('@supabase/supabase-js');
+
+  if (!process.env.SUPABASE_SERVICE_ROLE_KEY) {
+    return { success: false, error: 'Error de configuración del servidor' };
+  }
+
+  const adminSupabase = createSupabaseClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY,
+    {
+      auth: {
+        autoRefreshToken: false,
+        persistSession: false,
+      },
+    }
+  );
+
+  const { error } = await adminSupabase.auth.admin.deleteUser(user.id);
+
+  if (error) {
+    console.error('Error deleting user:', error);
+    return { success: false, error: error.message };
+  }
+
+  // Sign out the current session
+  await supabase.auth.signOut();
+
+  return { success: true };
+}

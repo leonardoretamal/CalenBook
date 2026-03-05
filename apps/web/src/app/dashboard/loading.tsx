@@ -11,7 +11,7 @@ export default function Loading() {
       </div>
       <div className="text-center space-y-2">
         <h2 className="text-xl font-bold tracking-tight animate-pulse">
-          Cargando Dashboard...
+          Cargando...
         </h2>
         <p className="text-muted-foreground text-sm">
           Estamos preparando tus reservas y agendas.
